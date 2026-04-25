@@ -13,7 +13,10 @@ doctype_js = {
 
 doc_events = {
     "Salary Slip": {
-        "validate": "ledgr_swiss_payroll.validators.refresh_anomalies",
+        "validate": [
+            "ledgr_swiss_payroll.calculator.apply_swiss_payroll_calculations",
+            "ledgr_swiss_payroll.validators.refresh_anomalies",
+        ],
         "before_submit": "ledgr_swiss_payroll.validators.validate_owner_approval",
     },
 }
