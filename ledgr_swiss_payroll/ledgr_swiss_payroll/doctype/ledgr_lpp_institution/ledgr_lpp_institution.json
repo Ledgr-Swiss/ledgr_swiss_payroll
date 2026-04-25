@@ -1,0 +1,34 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:LPP-{company}-{institution_name}",
+ "creation": "2026-04-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["institution_name", "company", "iban", "contact_email", "contact_phone", "notes"],
+ "fields": [
+  {"fieldname": "institution_name", "fieldtype": "Data", "label": "Nom institution", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "options": "Company", "label": "Mandat (Company)", "reqd": 1, "in_standard_filter": 1},
+  {"fieldname": "iban", "fieldtype": "Data", "label": "IBAN versement"},
+  {"fieldname": "contact_email", "fieldtype": "Data", "label": "Email contact"},
+  {"fieldname": "contact_phone", "fieldtype": "Data", "label": "Téléphone contact"},
+  {"fieldname": "notes", "fieldtype": "Text", "label": "Notes"}
+ ],
+ "links": [],
+ "modified": "2026-04-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LEDGR Swiss Payroll",
+ "name": "LEDGR LPP Institution",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"create": 1, "delete": 1, "read": 1, "report": 1, "role": "LEDGR Fiduciary Manager", "write": 1},
+  {"create": 1, "delete": 1, "read": 1, "report": 1, "role": "LEDGR Accountant", "write": 1},
+  {"read": 1, "report": 1, "role": "LEDGR Business Owner"}
+ ],
+ "sort_field": "company",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}
