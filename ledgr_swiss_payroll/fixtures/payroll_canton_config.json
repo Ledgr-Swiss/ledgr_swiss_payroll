@@ -1,0 +1,47 @@
+[
+  {
+    "doctype": "LEDGR Payroll Canton Config",
+    "name": "VD",
+    "canton_code": "VD",
+    "canton_name_fr": "Vaud",
+    "frais_pro_lump_sum_pct": null,
+    "frais_pro_max": null,
+    "notes": "Frais pro: traitement par déclaration annuelle, pas en IS"
+  },
+  {
+    "doctype": "LEDGR Payroll Canton Config",
+    "name": "FR",
+    "canton_code": "FR",
+    "canton_name_fr": "Fribourg",
+    "frais_pro_lump_sum_pct": null,
+    "frais_pro_max": null,
+    "notes": ""
+  },
+  {
+    "doctype": "LEDGR Payroll Canton Config",
+    "name": "GE",
+    "canton_code": "GE",
+    "canton_name_fr": "Genève",
+    "frais_pro_lump_sum_pct": null,
+    "frais_pro_max": null,
+    "notes": ""
+  },
+  {
+    "doctype": "LEDGR Payroll Canton Config",
+    "name": "NE",
+    "canton_code": "NE",
+    "canton_name_fr": "Neuchâtel",
+    "frais_pro_lump_sum_pct": null,
+    "frais_pro_max": null,
+    "notes": ""
+  },
+  {
+    "doctype": "LEDGR Payroll Canton Config",
+    "name": "JU",
+    "canton_code": "JU",
+    "canton_name_fr": "Jura",
+    "frais_pro_lump_sum_pct": null,
+    "frais_pro_max": null,
+    "notes": ""
+  }
+]

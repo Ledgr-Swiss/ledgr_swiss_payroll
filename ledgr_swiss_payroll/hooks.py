@@ -106,3 +106,11 @@ required_apps = ["ledgr_core", "ledgr_chart_of_accounts_ch"]
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
+
+# Fixtures
+# --------
+fixtures = [
+    "LEDGR Payroll Canton Config",
+    "LEDGR AHV Rate",
+    "LEDGR Cantonal IS Tax Slab",
+]

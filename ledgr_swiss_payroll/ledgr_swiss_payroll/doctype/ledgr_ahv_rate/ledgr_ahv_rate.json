@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:AHV-{active_from}",
+ "creation": "2026-04-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "active_from",
+  "active_until",
+  "ahv_employee_pct",
+  "ahv_employer_pct",
+  "ai_employee_pct",
+  "ai_employer_pct",
+  "apg_employee_pct",
+  "apg_employer_pct",
+  "ac_employee_pct",
+  "ac_employer_pct",
+  "ac_threshold",
+  "ac_solidarity_pct",
+  "ofas_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "active_from",
+   "fieldtype": "Date",
+   "label": "Actif depuis",
+   "reqd": 1
+  },
+  {
+   "fieldname": "active_until",
+   "fieldtype": "Date",
+   "label": "Actif jusqu'à"
+  },
+  {
+   "fieldname": "ahv_employee_pct",
+   "fieldtype": "Percent",
+   "label": "AHV employé %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ahv_employer_pct",
+   "fieldtype": "Percent",
+   "label": "AHV employeur %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ai_employee_pct",
+   "fieldtype": "Percent",
+   "label": "AI employé %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ai_employer_pct",
+   "fieldtype": "Percent",
+   "label": "AI employeur %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "apg_employee_pct",
+   "fieldtype": "Percent",
+   "label": "APG employé %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "apg_employer_pct",
+   "fieldtype": "Percent",
+   "label": "APG employeur %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ac_employee_pct",
+   "fieldtype": "Percent",
+   "label": "AC employé %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ac_employer_pct",
+   "fieldtype": "Percent",
+   "label": "AC employeur %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ac_threshold",
+   "fieldtype": "Currency",
+   "label": "Plafond AC annuel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ac_solidarity_pct",
+   "fieldtype": "Percent",
+   "label": "AC solidarité (excédent) %"
+  },
+  {
+   "fieldname": "ofas_reference",
+   "fieldtype": "Data",
+   "label": "Référence OFAS"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LEDGR Swiss Payroll",
+ "name": "LEDGR AHV Rate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "LEDGR Fiduciary Manager"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "LEDGR Accountant"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "LEDGR Auditor"
+  }
+ ],
+ "sort_field": "active_from",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

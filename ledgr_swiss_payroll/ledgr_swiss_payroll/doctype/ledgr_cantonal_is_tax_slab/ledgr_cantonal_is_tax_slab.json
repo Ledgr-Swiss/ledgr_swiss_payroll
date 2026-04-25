@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "creation": "2026-04-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "canton",
+  "code_tarif",
+  "tranche_min",
+  "tranche_max",
+  "taux_effectif",
+  "active_from",
+  "active_until",
+  "estv_reference",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "canton",
+   "fieldtype": "Link",
+   "options": "LEDGR Payroll Canton Config",
+   "label": "Canton",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "code_tarif",
+   "fieldtype": "Data",
+   "label": "Code tarif IS",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "tranche_min",
+   "fieldtype": "Currency",
+   "label": "Tranche min (CHF/mois)",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "tranche_max",
+   "fieldtype": "Currency",
+   "label": "Tranche max (CHF/mois)",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "taux_effectif",
+   "fieldtype": "Percent",
+   "label": "Taux effectif %",
+   "reqd": 1,
+   "precision": 4,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "active_from",
+   "fieldtype": "Date",
+   "label": "Actif depuis",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "active_until",
+   "fieldtype": "Date",
+   "label": "Actif jusqu'à"
+  },
+  {
+   "fieldname": "estv_reference",
+   "fieldtype": "Data",
+   "label": "Réf. ESTV/canton (PDF/page)"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LEDGR Swiss Payroll",
+ "name": "LEDGR Cantonal IS Tax Slab",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "LEDGR Fiduciary Manager"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "LEDGR Accountant"
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "LEDGR Auditor"
+  }
+ ],
+ "sort_field": "canton",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

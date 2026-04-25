@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:canton_code",
+ "creation": "2026-04-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "canton_code",
+  "canton_name_fr",
+  "frais_pro_lump_sum_pct",
+  "frais_pro_max",
+  "notes"
+ ],
+ "fields": [
+  {"fieldname": "canton_code", "fieldtype": "Data", "label": "Code canton", "reqd": 1, "unique": 1},
+  {"fieldname": "canton_name_fr", "fieldtype": "Data", "label": "Nom canton (FR)", "reqd": 1},
+  {"fieldname": "frais_pro_lump_sum_pct", "fieldtype": "Percent", "label": "Frais pro forfait %"},
+  {"fieldname": "frais_pro_max", "fieldtype": "Currency", "label": "Plafond frais pro annuel"},
+  {"fieldname": "notes", "fieldtype": "Text", "label": "Notes"}
+ ],
+ "links": [],
+ "modified": "2026-04-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LEDGR Swiss Payroll",
+ "name": "LEDGR Payroll Canton Config",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+  {"read": 1, "report": 1, "role": "LEDGR Fiduciary Manager"},
+  {"read": 1, "report": 1, "role": "LEDGR Accountant"},
+  {"read": 1, "report": 1, "role": "LEDGR Auditor"}
+ ],
+ "sort_field": "canton_code",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}
