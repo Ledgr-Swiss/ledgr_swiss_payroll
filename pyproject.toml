@@ -1,0 +1,26 @@
+[project]
+name = "ledgr_swiss_payroll"
+authors = [
+    { name = "LEDGR", email = "kevinvarelamoreira@gmail.com"}
+]
+description = "Swiss payroll automation app for Frappe v15 / ERPNext v15 / HRMS v15 — multi-mandate, AHV/AC + IS cantonal, certificat de salaire formulaire 11, pain.001 ISO 20022. Layer 2B of LEDGR."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # Frappe v15 stack — fournis par le bench
+    "frappe>=15.0.0",
+    "erpnext>=15.0.0",
+    "hrms>=15.0.0",
+    # XML / XSD validation pain.001
+    "lxml>=4.9.0",
+    # PDF extraction barèmes IS — used only by scripts/extract_is_baremes.py
+    "pdfplumber>=0.10.0",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "ledgr_swiss_payroll"
