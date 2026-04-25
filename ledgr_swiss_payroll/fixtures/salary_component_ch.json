@@ -1,0 +1,13 @@
+[
+  {"doctype": "Salary Component", "name": "Salaire de base", "salary_component": "Salaire de base", "salary_component_abbr": "SALAIRE_BASE", "type": "Earning", "depends_on_payment_days": 0},
+  {"doctype": "Salary Component", "name": "13e Salaire", "salary_component": "13e Salaire", "salary_component_abbr": "SALAIRE_13E", "type": "Earning", "depends_on_payment_days": 0},
+  {"doctype": "Salary Component", "name": "Heures supplémentaires", "salary_component": "Heures supplémentaires", "salary_component_abbr": "HEURES_SUP", "type": "Earning", "depends_on_payment_days": 0},
+  {"doctype": "Salary Component", "name": "Allocations familiales", "salary_component": "Allocations familiales", "salary_component_abbr": "ALLOC_FAM", "type": "Earning", "depends_on_payment_days": 0},
+  {"doctype": "Salary Component", "name": "Frais professionnels", "salary_component": "Frais professionnels", "salary_component_abbr": "FRAIS_PRO", "type": "Earning", "depends_on_payment_days": 0, "exempted_from_income_tax": 1},
+  {"doctype": "Salary Component", "name": "AVS/AI/AC Employé", "salary_component": "AVS/AI/AC Employé", "salary_component_abbr": "AVS_EMPLOYE", "type": "Deduction"},
+  {"doctype": "Salary Component", "name": "AVS/AI/AC Employeur", "salary_component": "AVS/AI/AC Employeur", "salary_component_abbr": "AVS_EMPLOYEUR", "type": "Earning", "do_not_include_in_total": 1, "statistical_component": 1},
+  {"doctype": "Salary Component", "name": "LPP Employé", "salary_component": "LPP Employé", "salary_component_abbr": "LPP_EMPLOYE", "type": "Deduction"},
+  {"doctype": "Salary Component", "name": "LPP Employeur", "salary_component": "LPP Employeur", "salary_component_abbr": "LPP_EMPLOYEUR", "type": "Earning", "do_not_include_in_total": 1, "statistical_component": 1},
+  {"doctype": "Salary Component", "name": "IS Retenue", "salary_component": "IS Retenue", "salary_component_abbr": "IS_RETENUE", "type": "Deduction"},
+  {"doctype": "Salary Component", "name": "Avance / Remboursement", "salary_component": "Avance / Remboursement", "salary_component_abbr": "AVANCE", "type": "Deduction"}
+]

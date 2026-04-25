@@ -19,6 +19,9 @@ doc_events = {
         ],
         "before_submit": "ledgr_swiss_payroll.validators.validate_owner_approval",
     },
+    "Company": {
+        "after_insert": "ledgr_swiss_payroll.setup.seed_payroll_mappings.seed_payroll_mappings",
+    },
 }
 
 permission_query_conditions = {
@@ -52,5 +55,15 @@ fixtures = [
                 "payroll_iban",
             ]],
         ],
+    },
+    {
+        "dt": "Salary Component",
+        "filters": [["salary_component", "in", [
+            "Salaire de base", "13e Salaire", "Heures supplémentaires",
+            "Allocations familiales", "Frais professionnels",
+            "AVS/AI/AC Employé", "AVS/AI/AC Employeur",
+            "LPP Employé", "LPP Employeur",
+            "IS Retenue", "Avance / Remboursement",
+        ]]],
     },
 ]
