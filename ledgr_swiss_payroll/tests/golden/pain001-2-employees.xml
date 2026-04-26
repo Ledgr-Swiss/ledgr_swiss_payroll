@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Document xmlns="http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>LEDGR-PE-GOLD-abc12345</MsgId>
+      <CreDtTm>2026-06-30T12:00:00</CreDtTm>
+      <NbOfTxs>2</NbOfTxs>
+      <CtrlSum>8300.75</CtrlSum>
+      <InitgPty>
+        <Nm>Test Payroll Co</Nm>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>PE-GOLD</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <BtchBookg>true</BtchBookg>
+      <NbOfTxs>2</NbOfTxs>
+      <CtrlSum>8300.75</CtrlSum>
+      <ReqdExctnDt>2026-06-30</ReqdExctnDt>
+      <Dbtr>
+        <Nm>Test Payroll Co</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>CH9300762011623852957</IBAN>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId/>
+      </DbtrAgt>
+      <CdtTrfTxInf>
+        <PmtId>
+          <EndToEndId>SLIP-A</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="CHF">4500.50</InstdAmt>
+        </Amt>
+        <Cdtr>
+          <Nm>Alice Mueller</Nm>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>CH9300762011623852957</IBAN>
+          </Id>
+        </CdtrAcct>
+        <RmtInf>
+          <Ustrd>Salaire 06/2026</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <EndToEndId>SLIP-B</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="CHF">3800.25</InstdAmt>
+        </Amt>
+        <Cdtr>
+          <Nm>Bob Dupont</Nm>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>CH4308307000289537320</IBAN>
+          </Id>
+        </CdtrAcct>
+        <RmtInf>
+          <Ustrd>Salaire 06/2026</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>
