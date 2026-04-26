@@ -3,6 +3,7 @@ from datetime import date
 from decimal import Decimal
 
 import frappe
+from frappe.utils import getdate
 
 from ledgr_swiss_payroll.ahv import compute_employee_social_charges
 from ledgr_swiss_payroll.helpers import quantize_chf
@@ -68,13 +69,14 @@ def apply_swiss_payroll_calculations(slip, method=None):
     employee = frappe.get_doc("Employee", slip.employee)
 
     base_amount = _component_amount(slip, "Salaire de base")
+    start = getdate(slip.start_date)
     thirteenth = compute_thirteenth_month(
         mode=employee.get("ledgr_thirteenth_month_mode") or "None",
         base_monthly=base_amount,
-        slip_month=slip.start_date.month,
+        slip_month=start.month,
         date_of_joining=employee.date_of_joining,
         relieving_date=employee.relieving_date,
-        year=slip.start_date.year,
+        year=start.year,
     )
     if thirteenth > 0:
         _add_or_update_earning(slip, "13e Salaire", thirteenth)
@@ -82,7 +84,7 @@ def apply_swiss_payroll_calculations(slip, method=None):
 
     gross_pay = Decimal(str(slip.gross_pay))
 
-    rate = _active_ahv_rate(slip.start_date)
+    rate = _active_ahv_rate(start)
     charges = compute_employee_social_charges(gross_pay, rate)
 
     avs_total = (
@@ -109,7 +111,7 @@ def apply_swiss_payroll_calculations(slip, method=None):
                 canton_code,
                 employee.ledgr_tax_code,
                 revenu_is,
-                slip.start_date,
+                start,
             )
             if is_retenue > 0:
                 _add_or_update_deduction(slip, "IS Retenue", is_retenue)
