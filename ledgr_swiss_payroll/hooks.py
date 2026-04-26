@@ -9,6 +9,7 @@ required_apps = ["ledgr_core", "ledgr_chart_of_accounts_ch"]
 
 doctype_js = {
     "Salary Slip": "public/js/salary_slip.js",
+    "Payroll Entry": "public/js/payroll_entry.js",
 }
 
 doc_events = {
@@ -18,6 +19,12 @@ doc_events = {
             "ledgr_swiss_payroll.validators.refresh_anomalies",
         ],
         "before_submit": "ledgr_swiss_payroll.validators.validate_owner_approval",
+    },
+    "Employee": {
+        "validate": "ledgr_swiss_payroll.validators.validate_employee_iban",
+    },
+    "LEDGR Mandate Settings": {
+        "validate": "ledgr_swiss_payroll.validators.validate_mandate_payroll_iban",
     },
     "Company": {
         "after_insert": "ledgr_swiss_payroll.setup.seed_payroll_mappings.seed_payroll_mappings",

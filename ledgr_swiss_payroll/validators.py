@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 
 import frappe
+import re
 from frappe import _
 
 
@@ -113,3 +114,32 @@ def _anomaly(code, severity, message):
         "message": message,
         "detected_at": datetime.utcnow().isoformat(),
     }
+
+
+IBAN_CH_LI_RE = re.compile(r"^(CH|LI)[0-9]{2}[A-Z0-9]{5}[A-Z0-9]{12}$")
+
+
+def validate_employee_iban(doc, method=None):
+    """Validate Employee.ledgr_iban (CH/LI strict)."""
+    if not doc.get("ledgr_iban"):
+        return
+    cleaned = doc.ledgr_iban.replace(" ", "").upper()
+    if not IBAN_CH_LI_RE.match(cleaned):
+        frappe.throw(
+            _("IBAN invalide — doit être CH/LI au format 21 caractères (sans espaces)."),
+            title=_("IBAN invalide"),
+        )
+    doc.ledgr_iban = cleaned
+
+
+def validate_mandate_payroll_iban(doc, method=None):
+    """Validate LEDGR Mandate Settings.payroll_iban (CH/LI strict)."""
+    if not doc.get("payroll_iban"):
+        return
+    cleaned = doc.payroll_iban.replace(" ", "").upper()
+    if not IBAN_CH_LI_RE.match(cleaned):
+        frappe.throw(
+            _("payroll_iban invalide — doit être CH/LI."),
+            title=_("IBAN employeur invalide"),
+        )
+    doc.payroll_iban = cleaned
