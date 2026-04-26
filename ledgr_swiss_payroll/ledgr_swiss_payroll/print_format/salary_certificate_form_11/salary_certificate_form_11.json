@@ -1,0 +1,22 @@
+{
+ "absolute_value": 0,
+ "align_labels_right": 0,
+ "creation": "2026-04-25 00:00:00.000000",
+ "css": ".form11-section { border-top: 2px solid #000; margin-top: 12px; padding-top: 8px; }\n.form11-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #ccc; }\n.form11-label { flex: 1; }\n.form11-amount { font-family: monospace; text-align: right; }",
+ "custom_format": 1,
+ "default_print_language": "fr",
+ "disabled": 0,
+ "doc_type": "LEDGR Salary Certificate",
+ "doctype": "Print Format",
+ "font": "Default",
+ "html": "<div style=\"font-family: Arial, sans-serif; font-size: 11pt;\">\n  <h2 style=\"text-align: center;\">Certificat de salaire — Formulaire 11 ESTV</h2>\n\n  <div class=\"form11-section\">\n    <p><strong>Employé :</strong> {{ frappe.db.get_value('Employee', doc.employee, 'employee_name') }} ({{ doc.employee }})</p>\n    <p><strong>Année :</strong> {{ doc.year }}</p>\n    <p><strong>Mandat :</strong> {{ doc.company }}</p>\n    <p><strong>Période :</strong> {{ frappe.format_value(doc.start_date, 'Date') }} → {{ frappe.format_value(doc.end_date, 'Date') }}</p>\n  </div>\n\n  <div class=\"form11-section\">\n    <h3>Champs principaux (Salaire et déductions)</h3>\n    <div class=\"form11-row\"><span class=\"form11-label\">1. Salaire brut</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.gross_salary, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">9. Déductions AVS/AI/AC</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.ahv_ai_ac_deduction, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">10. Déductions LPP</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.lpp_deduction, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">11. Salaire net</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.net_salary, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">12. Impôt à la source</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.is_deduction, currency='CHF') }}</span></div>\n  </div>\n\n  <div class=\"form11-section\">\n    <h3>13. Allocations forfaitaires</h3>\n    <div class=\"form11-row\"><span class=\"form11-label\">13.1 Frais de voyage effectifs</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.effective_expenses_travel or 0, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">13.2 Autres frais effectifs</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.other_effective_expenses or 0, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">13.3 Représentation forfait</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.representation_lump_sum or 0, currency='CHF') }}</span></div>\n    <div class=\"form11-row\"><span class=\"form11-label\">13.4 Voiture forfait</span><span class=\"form11-amount\">{{ frappe.utils.fmt_money(doc.car_lump_sum or 0, currency='CHF') }}</span></div>\n  </div>\n\n  {% if doc.remarks %}\n  <div class=\"form11-section\">\n    <h3>15. Remarques</h3>\n    <p>{{ doc.remarks }}</p>\n  </div>\n  {% endif %}\n\n  <div style=\"margin-top: 30px; font-size: 9pt; color: #666;\">\n    <p>Document généré par LEDGR — référence interne {{ doc.name }}</p>\n  </div>\n</div>",
+ "modified": "2026-04-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LEDGR Swiss Payroll",
+ "name": "salary_certificate_form_11",
+ "owner": "Administrator",
+ "print_format_builder": 0,
+ "print_format_type": "Jinja",
+ "show_section_headings": 0,
+ "standard": "Yes"
+}
