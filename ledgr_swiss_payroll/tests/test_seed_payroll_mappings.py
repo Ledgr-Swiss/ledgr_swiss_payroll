@@ -8,6 +8,18 @@ from ledgr_swiss_payroll.setup.seed_payroll_mappings import seed_payroll_mapping
 
 
 class TestSeedPayrollMappings(unittest.TestCase):
+    def setUp(self):
+        # Force re-seed by clearing existing IS Retenue mappings on the test company
+        frappe.db.sql("""
+            DELETE FROM `tabSalary Component Account`
+            WHERE parent = 'IS Retenue' AND company = '_Test Seed CH Co'
+        """)
+        frappe.db.commit()
+        from ledgr_swiss_payroll.setup.seed_payroll_mappings import seed_payroll_mappings
+        if frappe.db.exists("Company", "_Test Seed CH Co"):
+            doc = frappe.get_doc("Company", "_Test Seed CH Co")
+            seed_payroll_mappings(doc)
+
     def test_swiss_company_seeds_mappings(self):
         name = "_Test Seed CH Co"
         if not frappe.db.exists("Company", name):
@@ -62,6 +74,30 @@ class TestSeedPayrollMappings(unittest.TestCase):
             "Salary Component Account", {"company": name}
         )
         self.assertLessEqual(mappings, 11)
+
+    def test_is_retenue_uses_2275_not_2300(self):
+        """IS Retenue doit pointer sur le compte 2275 dédié, pas le compte 2300 fourre-tout."""
+        name = "_Test Seed CH Co"
+        if not frappe.db.exists("Company", name):
+            frappe.get_doc({
+                "doctype": "Company",
+                "company_name": name,
+                "abbr": "TSCH",
+                "default_currency": "CHF",
+                "country": "Switzerland",
+            }).insert(ignore_permissions=True)
+
+        sca = frappe.db.get_value(
+            "Salary Component Account",
+            {"parent": "IS Retenue", "company": name},
+            "account",
+        )
+        self.assertIsNotNone(sca, "Mapping IS Retenue manquant")
+        account_number = frappe.db.get_value("Account", sca, "account_number")
+        self.assertEqual(
+            account_number, "2275",
+            f"IS Retenue doit pointer sur 2275, pointe sur {account_number}",
+        )
 
 
 class TestSalarySlipGLDoubleEntry(unittest.TestCase):
