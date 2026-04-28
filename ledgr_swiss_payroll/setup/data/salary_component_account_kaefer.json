@@ -6,7 +6,7 @@
   {"component": "Frais professionnels", "account_number": "5800", "company_account_type": "expense"},
   {"component": "AVS/AI/AC Employé", "account_number": "2270", "company_account_type": "liability"},
   {"component": "LPP Employé", "account_number": "2280", "company_account_type": "liability"},
-  {"component": "IS Retenue", "account_number": "2300", "company_account_type": "liability"},
+  {"component": "IS Retenue", "account_number": "2275", "company_account_type": "liability"},
   {"component": "AVS/AI/AC Employeur", "account_number": "5700", "company_account_type": "expense"},
   {"component": "LPP Employeur", "account_number": "5710", "company_account_type": "expense"},
   {"component": "Avance / Remboursement", "account_number": "2050", "company_account_type": "liability"}
